@@ -1,0 +1,11 @@
+services:
+  auth-db:
+    image: postgres:18-alpine
+    ports:
+      - 1001:5432
+    environment:
+      POSTGRES_PASSWORD: ${AUTH_DB_PASSWORD}
+      POSTGRES_USER: ${AUTH_DB_USER}
+      POSTGRES_DATABASE: ${AUTH_DB_DATABASE}
+    volumes:
+      - ./db-data:/var/lib/postgres/data
