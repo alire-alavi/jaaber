@@ -19,6 +19,9 @@
         }
       }
     },
+    "test": {
+      "dependsOn": ["generate-types"]
+    },
     "prune-lockfile": {
       "dependsOn": ["build"],
       "cache": true,
