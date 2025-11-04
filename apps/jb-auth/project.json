@@ -54,7 +54,7 @@
       "dependsOn": ["build"],
       "options": {
         "buildTarget": "jb-auth:build",
-        "runBuildTargetDependencies": false
+        "runBuildTargetDependencies": true
       },
       "configurations": {
         "development": {
