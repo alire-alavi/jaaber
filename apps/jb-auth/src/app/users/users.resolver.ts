@@ -2,12 +2,15 @@ import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { User } from './models/user.model';
 import { UsersService } from './users.service';
 import { CreateUserInput } from './dto/create-user.input';
+import { UseGuards } from '@nestjs/common';
+import { GqlJwtGuard } from '../auth/guards/gql-auth.guard';
 
 @Resolver(() => User)
 export class UsersResolver {
   constructor(private readonly userService: UsersService) {}
 
   @Query(() => [User], { name: 'users' })
+  @UseGuards(GqlJwtGuard)
   async getUsers() {
     return this.userService.getUsers();
   }
