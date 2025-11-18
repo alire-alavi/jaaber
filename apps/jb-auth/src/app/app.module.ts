@@ -13,6 +13,11 @@ import { AuthModule } from './auth/auth.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       context: ({ req, res }) => ({ req, res }),
+      playground: {
+        settings: {
+          'request.credentials': 'include',
+        },
+      },
       autoSchemaFile: true,
     }),
     UsersModule,
