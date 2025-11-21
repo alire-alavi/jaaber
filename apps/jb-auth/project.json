@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "dependsOn": ["generate-types"],
+      "dependsOn": ["generate-types", "generate-ts-proto"],
       "executor": "nx:run-commands",
       "options": {
         "command": "webpack-cli build",
@@ -78,6 +78,9 @@
         "command": "prisma migrate dev",
         "cwd": "apps/jb-auth"
       }
+    },
+    "generate-ts-proto": {
+      "command": "nx generate-ts-proto"
     },
     "test": {
       "options": {
