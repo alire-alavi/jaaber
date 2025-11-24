@@ -47,11 +47,7 @@
   ],
   "targetDefaults": {
     "build": {
-      "inputs": [
-        "{projectRoot}/**/*",
-        "{workspaceRoot}/lib/*",
-        "{workspaceRoot}/proto/*"
-      ],
+      "inputs": ["{projectRoot}/**/*", "{workspaceRoot}/lib/*"],
       "options": {
         "assets": [
           {
