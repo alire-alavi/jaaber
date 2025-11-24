@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jaaber/nestjs": ["libs/nestjs/src/index.ts"]
+      "@jaaber/nestjs": ["libs/nestjs/src/index.ts"],
+      "@jaaber/grpc": ["libs/grpc/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
