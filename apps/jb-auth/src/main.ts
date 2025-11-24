@@ -5,11 +5,12 @@
 
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { ConfigService } from '@nestjs/config';
 import * as cookieParser from 'cookie-parser';
-import { GrpcOptions, Transport } from '@nestjs/microservices';
-import { AppModule } from './app/app.module';
 import { AUTH_PACKAGE_NAME } from 'types/proto/auth';
+
+import { AppModule } from './app/app.module';
+import { ConfigService } from '@nestjs/config';
+import { GrpcOptions, Transport } from '@nestjs/microservices';
 import { join } from 'path';
 
 async function bootstrap() {
