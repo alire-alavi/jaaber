@@ -9,3 +9,21 @@ services:
       POSTGRES_DATABASE: ${POSTGRES_DATABASE}
     volumes:
       - ./db-data:/var/lib/postgres/data
+
+  pulsar:
+    image: apachepulsar/pulsar:4.1.2
+    container_name: pulsar
+    command: >
+      bash -c "
+      bin/pulsar standalone
+      "
+    ports:
+      - '6650:6650' # Pulsar binary protocol
+      - '8080:8080' # Pulsar REST admin API
+    volumes:
+      - pulsar-data:/pulsar/data
+    environment:
+      - PULSAR_MEM=-Xms512m -Xmx512m -XX:MaxDirectMemorySize=1g
+
+volumes:
+  pulsar-data:
